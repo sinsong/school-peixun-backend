@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 // alt + / 代码提示
 
 @SpringBootApplication
-@MapperScan("org.literal.qjxt.dao")
+@MapperScan(basePackages = {"org.literal.qjxt.dao"})
 public class QjxtApplication {
 
 	public static void main(String[] args) {
