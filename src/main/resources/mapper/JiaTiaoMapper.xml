@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd"
+>
+
+<mapper namespace="org.literal.qjxt.dao.JiaTiaoDao">
+  <insert id="addJiaTiao">
+  	INSERT INTO tb_jiatiao (type, reason, s_time, e_time, phone, uid, tid) VALUES (#{type}, #{reason}, #{s_time}, #{e_time}, #{phone}, #{uid}, #{tid})
+  </insert>
+  
+  <select id="stuSearchJT" resultType="org.literal.qjxt.entity.JiaTiao">
+  	SELECT * FROM tb_jiatiao WHERE uid=#{uid}
+  </select>
+  
+  <select id="teacherSearchJT" resultType="org.literal.qjxt.entity.JiaTiao">
+  	SELECT * FROM tb_jiatiao WHERE tid=#{tid}
+  </select>
+  
+  <update id="teacherUpdateJiaTiao">
+  	UPDATE tb_jiatiao SET status=#{status} WHERE tid=#{tid} and id=#{jit}
+  </update>
+</mapper>

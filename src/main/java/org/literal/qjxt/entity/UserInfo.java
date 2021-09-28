@@ -50,4 +50,10 @@ public class UserInfo implements Serializable{
 	public void setUid(Integer uid) {
 		this.uid = uid;
 	}
+
+	@Override
+	public String toString() {
+		return "UserInfo [id=" + id + ", name=" + name + ", clazz=" + clazz + ", uid=" + uid + "]";
+	}
+	
 }

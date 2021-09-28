@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd"
+>
+
+<mapper namespace="org.literal.qjxt.dao.UserDao">
+  <!-- 学生 -->
+  <insert id="addStu" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+    INSERT INTO tb_student (account, pwd) VALUES (#{account}, #{pwd})
+  </insert>
+  <insert id="addStuInfo">
+  	INSERT INTO tb_stuinfo (name, clazz, uid) VALUES (#{name}, #{clazz}, #{uid})
+  </insert>
+  
+  <select id="stuLogin" resultType="org.literal.qjxt.entity.User">
+  	SELECT * FROM tb_student WHERE account=#{account} and pwd=#{pwd}
+  </select>
+  
+  <!-- 老师 -->
+  
+  <insert id="addTeacher" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+  	INSERT INTO tb_teacher (account, pwd) VALUES (#{account}, #{pwd})
+  </insert>
+  <insert id="addTeacherInfo">
+  	INSERT INTO tb_teacherinfo (name, clazz, tid) VALUES (#{name}, #{clazz}, #{uid})
+  </insert>
+  
+  <select id="teacherLogin" resultType="org.literal.qjxt.entity.User">
+  	SELECT * FROM tb_teacher WHERE account=#{account} and pwd=#{pwd}
+  </select>
+</mapper>
