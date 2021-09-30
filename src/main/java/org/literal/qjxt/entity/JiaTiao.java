@@ -21,8 +21,8 @@ public class JiaTiao implements Serializable {
 	private Date 	e_time;	// 结束时间
 	private String 	reason; // 原因
 	private String 	status; // 状态
-	private Integer uid;    // 审批老师 id
-	private Integer tid;    // 请假学生 id
+	private Integer uid;    // 请假学生 id
+	private Integer tid;    // 审批老师 id
 	private String  phone;  // 手机号
 	
 	private static final long serialVersionUID = 9055018177286329522L;

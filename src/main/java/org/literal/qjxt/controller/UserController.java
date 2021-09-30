@@ -71,6 +71,7 @@ public class UserController {
 				Integer status = (Integer) result.get("status");
 				if (status == 0)
 				{
+					result.put("role", 0);
 					// 登陆成功 保持登录状态
 					session.setAttribute("user", result.get("user"));
 					session.setAttribute("role", 0);
@@ -83,6 +84,7 @@ public class UserController {
 				Integer status = (Integer) result.get("status");
 				if (status == 0)
 				{
+					result.put("role", 1);
 					session.setAttribute("user", result.get("user"));
 					session.setAttribute("role", 1);
 				}
